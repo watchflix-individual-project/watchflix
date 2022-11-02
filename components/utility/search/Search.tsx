@@ -15,23 +15,28 @@ const Search: React.FC<ISearch> = () => {
         router.push(`/results?Search=${SearchTerm}`);
       }}
     >
-      <input
-        type="text"
-        className="border w-5/6 sm:w-128 h-searchInput px-3"
-        value={SearchTerm}
-        placeholder="Search"
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button type="submit" className="btn-icon flex">
-        <Image
-          className="align-middle"
-          src="/search.svg"
-          alt="search icon"
-          width={20}
-          height={20}
-          priority
+      <div className="flex">
+        <input
+          type="text"
+          className="border px-3 rounded-l"
+          value={SearchTerm}
+          placeholder="Search"
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
-      </button>
+        <button
+          type="submit"
+          className="btn-icon flex rounded-r bg-color-primary"
+        >
+          <Image
+            className="align-middle"
+            src="/search.svg"
+            alt="search icon"
+            width={20}
+            height={20}
+            priority
+          />
+        </button>
+      </div>
     </form>
   );
 };

@@ -1,14 +1,36 @@
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+//import { useRouter } from 'next/router';
+import React from 'react';
+//import Image from 'next/image';
 
-export interface IBanner {}
+export interface IBanner {
+  title: string;
+  description: string;
+}
 
-const Banner: React.FC<IBanner> = () => {
-  // const router = useRouter();
-  // const [BannerTerm, setBannerTerm] = useState<string>('');
-
+const Banner: React.FC<IBanner> = ({ title, description }) => {
   return (
-    <div className="absolute top-0 left-0 z-0 h-banner w-screen bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+    <div className="relative bg-slate-400 w-full  banner">
+      <div className="video-wrapper">
+        <video
+          className="w-full h-full object-cover"
+          webkit-playsinline="true"
+          playsInline
+          autoPlay={true}
+          loop
+          muted
+        >
+          <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div className="absolute spotlight-txt text-white">
+        <h1 className="m-5 text-xl font-bold">{title}</h1>
+        <p className="m-5 w-1/2">{description}</p>
+      </div>
+    </div>
   );
 };
 

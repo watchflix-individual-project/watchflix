@@ -1,11 +1,11 @@
-import { IBanner } from './Banner';
+import { ICard } from './Card';
 
-const base: IBanner = {
+const base: ICard = {
   title: 'Hello world!',
   description:
     'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
 };
 
-export const mockBannerProps = {
+export const mockCardProps = {
   base,
 };
