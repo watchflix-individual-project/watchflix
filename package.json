@@ -16,9 +16,17 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.10",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-glider": "^4.0.2",
+    "react-multi-carousel": "^2.8.2",
+    "react-responsive-carousel": "^3.2.23",
+    "react-transition-group": "^4.4.5",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
