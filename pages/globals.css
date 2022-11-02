@@ -2,11 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 @layer components {
+  body {
+    color: #1e1e1e;
+    background-color: #f5f5f5;
+  }
   .btn-primary {
     @apply border-0 p-2 px-6 bg-blue-900;
   }
   .btn-icon {
     @apply border-0 p-2 bg-blue-900;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .movie-image-card {
+    background-image: url('/movie3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .logo-text {
+    color: #0554f6;
+  }
+  .bg-color-primary {
+    background-color: #0554f6;
+  }
+  .movie-card {
+    filter: drop-shadow(0 10 20 10 #d0d0d0);
+  }
+  .spotlight-txt {
+    bottom: 30px;
+    left: 30px;
+  }
+  .video-wrapper {
+    overflow: hidden;
+    height: 100%;
+  }
+  .banner {
+    height: 60vh;
+  }
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      45deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(7, 6, 91, 0.16290266106442575) 60%,
+      rgba(2, 0, 36, 0) 100%
+    );
   }
 }
