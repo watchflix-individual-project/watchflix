@@ -1,29 +1,18 @@
 import Head from 'next/head';
 import Header from '../../navigation/header/Header';
+//import Script from 'next/script';
+//import SidebarLayout from '../sidebar/SidebarLayout';
 
-export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
-  justify?: 'items-center' | 'items-start';
-}
+export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {}
 
-const PrimaryLayout: React.FC<IPrimaryLayout> = ({
-  children,
-  justify = 'items-center',
-  ...divProps
-}) => {
+const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children }) => {
   return (
     <>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-          rel="stylesheet"
-        />
         <title>Watchflix</title>
       </Head>
-      <div {...divProps} className={`min-h-screen flex flex-col ${justify}`}>
-        <Header />
-        <main className="px-5">{children}</main>
-        <div className="m-auto" />
-      </div>
+      <Header />
+      <main>{children}</main>
     </>
   );
 };
