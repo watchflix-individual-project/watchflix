@@ -12,10 +12,10 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <section>
-      <Section title="Section" />
-      <Section title="Section" />
-      <Section title="Section" />
-      <Section title="Section" />
+      <Section title="Action" />
+      <Section title="Comedy" />
+      <Section title="Documentary" />
+      <Section title="Horror" />
     </section>
   );
 };

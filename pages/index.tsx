@@ -14,7 +14,7 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <section className="">
-      <Banner title="tes" description="tes" />
+      <Banner title="Movie" description="Some movie description" />
       <Section title="Section" />
     </section>
   );

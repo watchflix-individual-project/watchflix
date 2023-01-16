@@ -1,9 +1,22 @@
 import Link from 'next/link';
 import Search from '../../utility/search/Search';
+import * as React from 'react';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
+import { Divider } from '@mui/material';
 
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
 const Header: React.FC<IHeader> = ({ ...headerProps }) => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <header
       {...headerProps}
@@ -31,26 +44,33 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
       <div className="">
         <div className="space-x-5  sm:flex  hidden">
           <Search />
-          <div className="dropdown relative">
-            <div className="h-searchInput w-9 bg-blue-600 rounded-full"></div>
-            <ul className="dropdown-menu absolute hidden right-0 text-gray-700 pt-1 w-max z-50">
-              <li className="">
-                <Link
-                  className="rounded-t-default bg-gray-200 hover:bg-purple-300 py-2 px-4 block whitespace-no-wrap"
-                  href="/account"
-                >
-                  Account Settings
-                </Link>
-              </li>
-              <li className="">
-                <a
-                  className="rounded-b-default bg-gray-200 hover:bg-purple-300 py-2 px-4 block whitespace-no-wrap"
-                  href="#"
-                >
-                  Sign Out
-                </a>
-              </li>
-            </ul>
+          <div>
+            <div
+              className="h-searchInput w-9 bg-blue-600 rounded-full"
+              id="basic-button"
+              aria-controls={open ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            ></div>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <div className="mx-3 mb-3">
+                <b>Rebeka Dea</b>
+              </div>
+              <Divider />
+              <Link href="/account">
+                <MenuItem>Account Settings</MenuItem>
+              </Link>
+              <MenuItem onClick={handleClose}>Sign Out</MenuItem>
+            </Menu>
           </div>
         </div>
       </div>

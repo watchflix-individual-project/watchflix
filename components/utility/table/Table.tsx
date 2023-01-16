@@ -4,6 +4,7 @@ import TableMUI from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 //import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 //import Paper from '@mui/material/Paper';
@@ -30,11 +31,11 @@ function createData(date: string, title: string, action: number) {
 }
 
 const rows = [
-  createData('29 Sept 2022', '159', 6.0),
-  createData('29 Sept 2022', '237', 1),
-  createData('29 Sept 2022', '262', 16.0),
-  createData('29 Sept 2022', '305', 3.7),
-  createData('29 Sept 2022', '356', 10.0),
+  createData('29 Sept 2022', 'Movie Title 4', 6.0),
+  createData('28 Sept 2022', 'Movie Title 3', 1),
+  createData('27 Sept 2022', 'Movie Title 2', 16.0),
+  createData('26 Sept 2022', 'Movie Title 1', 3.7),
+  createData('25 Sept 2022', 'Movie Title 0', 10.0),
 ];
 
 export interface ITable {
@@ -73,13 +74,14 @@ const Table: React.FC<ITable> = ({ sampleTextProp, note }) => {
                 <StyledTableCell component="th" scope="row">
                   {row.date}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.title}</StyledTableCell>
-                <StyledTableCell align="right">{row.action}</StyledTableCell>
+                <StyledTableCell>{row.title}</StyledTableCell>
+                <StyledTableCell align="right">
+                  <DeleteForeverIcon color="primary" />
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
         </TableMUI>
-        <Button text="View More..."></Button>
       </TableContainer>
 
       <p className="mt-4">{note}</p>

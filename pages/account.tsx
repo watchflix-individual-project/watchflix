@@ -3,6 +3,8 @@
 //import { useRouter } from 'next/router';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 //import Banner from '../components/utility/banner/Banner';
 //import Search from '../components/utility/search/Search';
 //import Section from '../components/utility/section/Section';
@@ -14,7 +16,7 @@ const Home: NextPageWithLayout = () => {
   //const { locale } = useRouter();
 
   return (
-    <div className="mx-20 my-5 flex flex-1">
+    <div className="mx-10 my-3 flex flex-1">
       <div className="flex-col w-full">
         <Input field={'username'} value={'Rebeka Dea'} link="Edit"></Input>
         <Input
@@ -37,11 +39,13 @@ export default Home;
 Home.getLayout = (page) => {
   return (
     <PrimaryLayout>
-      <h1 className="px-10 font-bold text-xl mt-5">Account Settings</h1>
-      <div className="flex">
-        <SidebarLayout />
+      <Container maxWidth="md" className="px-10">
+        <div className="mt-5 px-10">
+          <h1 className="font-bold text-xl mb-2">Account Settings</h1>
+          <Divider></Divider>
+        </div>
         {page}
-      </div>
+      </Container>
     </PrimaryLayout>
   );
 };

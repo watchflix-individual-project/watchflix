@@ -28,7 +28,7 @@ const Banner: React.FC<IBanner> = ({ title, description }) => {
 
       <div className="absolute spotlight-txt text-white">
         <h1 className="m-5 text-xl font-bold">{title}</h1>
-        <p className="m-5 w-1/2">{description}</p>
+        <p className="m-5 w-100">{description}</p>
       </div>
     </div>
   );

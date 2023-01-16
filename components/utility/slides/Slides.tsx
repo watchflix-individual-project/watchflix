@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 
 import Card from '../card/Card';
 import Button from '@mui/material/Button';
+import Dialog from '../dialog/dialog';
 export interface ISlides {
   // title: string;
 }
@@ -27,31 +28,31 @@ const Slides: React.FC<ISlides> = (_) => {
         className="mySwiper px-10"
       >
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
         <SwiperSlide>
-          <Card title="juudl" description="loremips" />
+          <Dialog />
         </SwiperSlide>
       </Swiper>
     </>
